@@ -1,0 +1,11 @@
+/* Only interaction/accessibility fixes; original page CSS remains authoritative. */
+button:disabled { cursor:wait; opacity:.65; }
+input[type=radio]:checked + div { border-color:#1e3a8a; background:#eff6ff; }
+input[type=radio]:focus-visible + div { outline:2px solid #1e3a8a; outline-offset:2px; }
+.api-message { padding:1rem; text-align:center; color:#991b1b; }
+.api-message button { margin-left:.5rem; text-decoration:underline; }
+@media print { nav, #backToTop, #scrollTopBtn { display:none!important; } }
+/* Keep the shared menu tappable while the remote icon font is still loading. */
+#mobileMenuBtn { min-width:44px; min-height:44px; }
+/* The original pages loaded Kanit, but courses/contact lacked a body font rule. */
+body { font-family:'Kanit',sans-serif; }

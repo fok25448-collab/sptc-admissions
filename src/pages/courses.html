@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <base target="_top">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>หลักสูตรที่เปิดสอน - วิทยาลัยเทคนิคสมุทรปราการ</title>
+    
+    <link rel="stylesheet" href="/assets/courses.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+<link rel="stylesheet" href="/assets/migration.css">
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+
+    <!-- Navigation Bar (เหมือนเดิม) -->
+    <!-- PARTIAL:nav -->
+
+    <div class="page-container flex-1">
+        <!-- Hero Section (เหมือนเดิม) -->
+        <section class="courses-hero">
+            <div class="container mx-auto px-4 relative">
+                <div class="max-w-4xl mx-auto text-center">
+                    <span class="inline-block bg-yellow-400 text-blue-900 px-4 py-1 rounded-full text-sm font-bold mb-4 shadow-lg">
+                        เปิดรับสมัครปีการศึกษา 2567
+                    </span>
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight">
+                        สร้างอาชีพที่มั่นคง<br>
+                        <span class="text-yellow-400">กับหลักสูตรสายอาชีพ</span>
+                    </h1>
+                    <p class="text-lg sm:text-xl opacity-90 mb-8 max-w-2xl mx-auto">
+                        พัฒนาทักษะมืออาชีพกับหลักสูตรที่ตรงตามความต้องการของตลาดแรงงาน
+                    </p>
+                    
+                    <!-- Quick Stats -->
+                    <div class="stat-counter max-w-3xl mx-auto">
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                            <div class="text-center">
+                                <div class="text-2xl sm:text-3xl font-bold text-yellow-400">20+</div>
+                                <div class="text-sm opacity-90">หลักสูตร</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl sm:text-3xl font-bold text-yellow-400">95%</div>
+                                <div class="text-sm opacity-90">มีงานทำหลังจบ</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl sm:text-3xl font-bold text-yellow-400">100+</div>
+                                <div class="text-sm opacity-90">อาจารย์ผู้เชี่ยวชาญ</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl sm:text-3xl font-bold text-yellow-400">50+</div>
+                                <div class="text-sm opacity-90">บริษัทร่วมงาน</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <main class="container mx-auto px-4 py-8">
+            <!-- Search Section แบบใหม่ -->
+            <div class="courses-search-simple">
+                <i class="fas fa-search"></i>
+                <input type="text" id="coursesSearch" placeholder="ค้นหาหลักสูตร...">
+            </div>
+
+            <!-- Simplified Filter Section -->
+            <div class="filter-section-simple">
+                <!-- Filter Header แบบเรียบง่าย -->
+                <div class="filter-header-simple">
+                    <h2>
+                        <i class="fas fa-filter"></i>
+                        ตัวกรอง
+                    </h2>
+                    <p class="text-gray-500 text-sm mt-1">เลือกตัวกรองที่ต้องการใช้ค้นหา</p>
+                </div>
+                
+                <!-- ระดับการศึกษาแบบเรียบง่าย -->
+                <div class="level-filter-simple">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3">ระดับการศึกษา</h3>
+                    <div class="level-options" id="levelOptionsSimple">
+                        <!-- ตัวเลือกระดับการศึกษาจะถูกเพิ่มโดย JavaScript -->
+                    </div>
+                </div>
+                
+                <!-- Filter Action Buttons -->
+                <div class="filter-actions-simple">
+                    <button class="filter-btn-simple clear" id="clearFiltersSimple">
+                        <i class="fas fa-times"></i>
+                        ล้างทั้งหมด
+                    </button>
+                    <button class="filter-btn-simple apply" id="applyFiltersSimple">
+                        <i class="fas fa-check"></i>
+                        ใช้ตัวกรอง
+                    </button>
+                </div>
+            </div>
+
+            <!-- Courses Count -->
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-xl font-bold text-gray-800">
+                    <span id="coursesCount">0</span> หลักสูตร
+                </h2>
+                <div class="text-sm text-gray-500">
+                    <span id="filteredCount">0</span> จาก <span id="totalCount">0</span> หลักสูตร
+                </div>
+            </div>
+
+            <!-- Loading State (เหมือนเดิม) -->
+            <div id="coursesLoading" class="courses-loading">
+                <!-- Skeleton Loaders -->
+                <div class="course-skeleton">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-content">
+                        <div class="skeleton-line short"></div>
+                        <div class="skeleton-line medium"></div>
+                        <div class="skeleton-line"></div>
+                        <div class="skeleton-line"></div>
+                        <div class="skeleton-line short"></div>
+                    </div>
+                </div>
+                <div class="course-skeleton">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-content">
+                        <div class="skeleton-line short"></div>
+                        <div class="skeleton-line medium"></div>
+                        <div class="skeleton-line"></div>
+                        <div class="skeleton-line"></div>
+                        <div class="skeleton-line short"></div>
+                    </div>
+                </div>
+                <div class="course-skeleton">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-content">
+                        <div class="skeleton-line short"></div>
+                        <div class="skeleton-line medium"></div>
+                        <div class="skeleton-line"></div>
+                        <div class="skeleton-line"></div>
+                        <div class="skeleton-line short"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Empty State (เหมือนเดิม) -->
+            <div id="emptyState" class="empty-state hidden">
+                <div class="empty-state-icon">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-700 mb-2">ไม่พบหลักสูตร</h3>
+                <p class="text-gray-500 mb-6">ลองเปลี่ยนตัวกรองหรือคำค้นหาของคุณ</p>
+                <button id="resetSearch" class="bg-blue-900 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-800 transition">
+                    ล้างตัวกรองทั้งหมด
+                </button>
+            </div>
+
+            <!-- Courses Grid (เหมือนเดิม) -->
+            <div id="coursesContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 hidden">
+                <!-- Courses will be loaded here -->
+            </div>
+            
+            <!-- Load More Button (เหมือนเดิม) -->
+            <div class="text-center mt-12" id="loadMoreContainer">
+                <button id="loadMoreBtn" 
+                        class="bg-gray-100 text-gray-700 px-8 py-3 rounded-lg font-medium hover:bg-gray-200 transition hidden">
+                    <i class="fas fa-sync-alt mr-2"></i> โหลดเพิ่มเติม
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Course Details Modal (เหมือนเดิม) -->
+    <div class="course-modal" id="courseModal">
+        <div class="course-modal-content">
+            <button class="course-modal-close" id="modalCloseBtn">
+                <i class="fas fa-times"></i>
+            </button>
+            <img id="modalCourseImage" src="" class="course-modal-image" alt="Course Image">
+            <div class="course-modal-body">
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span id="modalCourseLevel" class="course-level-badge pvch">ปวช.</span>
+                    <span id="modalCourseCategory" class="course-category">หมวดหมู่</span>
+                </div>
+                <h2 id="modalCourseTitle" class="course-modal-title">ชื่อหลักสูตร</h2>
+                <p id="modalCourseDesc" class="course-modal-description">รายละเอียดหลักสูตร...</p>
+                
+                <div class="course-details-grid">
+                    <div class="detail-card">
+                        <h4>จำนวนรับสมัคร</h4>
+                        <p id="modalCourseQuota">0 คน</p>
+                    </div>
+                    <div class="detail-card">
+                        <h4>ระยะเวลาเรียน</h4>
+                        <p id="modalCourseDuration">3 ปี</p>
+                    </div>
+                    <div class="detail-card">
+                        <h4>ค่าเทอมต่อปี</h4>
+                        <p id="modalCourseTuition">เริ่มต้น 10,000 บาท</p>
+                    </div>
+                    <div class="detail-card">
+                        <h4>โอกาสในการทำงาน</h4>
+                        <p id="modalCourseJobs">สูงมาก</p>
+                    </div>
+                </div>
+                
+                <!-- Career Opportunities -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">ตำแหน่งงานที่สามารถทำได้</h3>
+                    <div class="flex flex-wrap gap-2" id="modalCoursePositions">
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">ช่างเทคนิค</span>
+                        <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">ผู้ช่วยวิศวกร</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">ช่างประจำโรงงาน</span>
+                    </div>
+                </div>
+                
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="/application" 
+                       class="flex-1 bg-blue-900 text-white text-center py-3 px-6 rounded-lg font-bold hover:bg-blue-800 transition shadow-lg hover:shadow-blue-900/30">
+                        <i class="fas fa-edit mr-2"></i> สมัครเรียนทันที
+                    </a>
+                    <button onclick="window.print()" 
+                            class="flex-1 bg-white text-blue-900 text-center py-3 px-6 rounded-lg font-bold border-2 border-blue-900 hover:bg-blue-50 transition">
+                        <i class="fas fa-print mr-2"></i> พิมพ์ข้อมูล
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll to Top Button (เหมือนเดิม) -->
+    <button class="scroll-top-btn" id="scrollTopBtn">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Footer (ไม่ fixed) (เหมือนเดิม) -->
+    <!-- PARTIAL:footer -->
+
+    <!-- JavaScript สำหรับฟิลเตอร์แบบใหม่ -->
+    
+<script src="/assets/common.js"></script>
+<script src="/assets/courses.js"></script>
+</body>
+</html>

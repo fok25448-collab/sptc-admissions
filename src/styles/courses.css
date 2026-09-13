@@ -1,0 +1,691 @@
+
+        /* ============================================
+           COURSES PAGE STYLES - MOBILE FIRST
+           ============================================ */
+        
+        /* เพิ่ม padding-top เพื่อป้องกันเมนูบาร์ทับ */
+        .page-container {
+            padding-top: 80px; /* Adjust based on your navbar height */
+            min-height: 100vh;
+        }
+        
+        /* Hero Section for Courses */
+        .courses-hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            color: white;
+            padding: 4rem 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .courses-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+        }
+        
+        /* Stats Counter */
+        .stat-counter {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        /* ============================================
+           SIMPLIFIED FILTER SECTION - MODERN DESIGN
+           ============================================ */
+        
+        /* Main Filter Container - แบบเรียบง่าย */
+        .filter-section-simple {
+            background: white;
+            border-radius: 20px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .filter-section-simple::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%);
+            border-radius: 20px 20px 0 0;
+        }
+        
+        /* Filter Header อย่างง่าย */
+        .filter-header-simple {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #f3f4f6;
+        }
+        
+        .filter-header-simple h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1f2937;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .filter-header-simple h2 i {
+            color: #1e3a8a;
+        }
+        
+        /* ระดับการศึกษาแบบง่าย */
+        .level-filter-simple {
+            margin-bottom: 1rem;
+        }
+        
+        .level-options {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.75rem;
+        }
+        
+        @media (min-width: 640px) {
+            .level-options {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .level-option {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: white;
+        }
+        
+        .level-option:hover {
+            border-color: #3b82f6;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+        }
+        
+        .level-option.selected {
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            border-color: #1e3a8a;
+            color: white;
+            box-shadow: 0 6px 16px rgba(30, 58, 138, 0.2);
+        }
+        
+        .level-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            flex-shrink: 0;
+            font-size: 1.25rem;
+            transition: all 0.3s ease;
+        }
+        
+        .level-option .level-icon {
+            background: #f3f4f6;
+            color: #6b7280;
+        }
+        
+        .level-option.selected .level-icon {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+        
+        .level-info {
+            flex: 1;
+        }
+        
+        .level-name {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .level-option .level-name {
+            color: #374151;
+        }
+        
+        .level-option.selected .level-name {
+            color: white;
+        }
+        
+        .level-count {
+            font-size: 0.875rem;
+            opacity: 0.8;
+        }
+        
+        .level-option .level-count {
+            color: #6b7280;
+        }
+        
+        .level-option.selected .level-count {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* Filter Actions แบบง่าย */
+        .filter-actions-simple {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e5e7eb;
+        }
+        
+        .filter-btn-simple {
+            flex: 1;
+            padding: 0.875rem 1rem;
+            border-radius: 10px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 0.95rem;
+        }
+        
+        .filter-btn-simple.clear {
+            background: #f3f4f6;
+            color: #6b7280;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .filter-btn-simple.clear:hover {
+            background: #e5e7eb;
+            color: #4b5563;
+            transform: translateY(-1px);
+        }
+        
+        .filter-btn-simple.apply {
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            color: white;
+            box-shadow: 0 4px 12px rgba(30, 58, 138, 0.2);
+        }
+        
+        .filter-btn-simple.apply:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(30, 58, 138, 0.3);
+        }
+        
+        /* Course Cards Enhanced (เหมือนเดิม) */
+        .course-card-enhanced {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .course-card-enhanced:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .course-image-container {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .course-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .course-card-enhanced:hover .course-image {
+            transform: scale(1.05);
+        }
+        
+        .course-badge-overlay {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .course-level-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .course-level-badge.pvch {
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            color: white;
+        }
+        
+        .course-level-badge.pvs {
+            background: linear-gradient(135deg, #f59e0b, #fbbf24);
+            color: #1f2937;
+        }
+        
+        .course-hot-badge {
+            background: linear-gradient(135deg, #ef4444, #f87171);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+        
+        .course-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .course-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+        
+        .course-description {
+            color: #6b7280;
+            font-size: 0.9375rem;
+            line-height: 1.6;
+            margin-bottom: 1.25rem;
+            flex-grow: 1;
+        }
+        
+        .course-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid #f3f4f6;
+            margin-top: auto;
+        }
+        
+        .course-category {
+            background: #f0f9ff;
+            color: #0369a1;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        
+        .course-quota {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+        
+        .course-quota i {
+            color: #1e3a8a;
+        }
+        
+        /* Course Details Modal (เหมือนเดิม) */
+        .course-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            padding: 1rem;
+            -webkit-overflow-scrolling: touch;
+            overflow-y: auto;
+        }
+        
+        .course-modal.active {
+            display: flex;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .course-modal-content {
+            background: white;
+            border-radius: 24px;
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: slideUp 0.4s ease;
+        }
+        
+        .course-modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            font-size: 1.25rem;
+            color: #1f2937;
+            transition: all 0.2s;
+        }
+        
+        .course-modal-close:hover {
+            background: white;
+            transform: scale(1.1);
+        }
+        
+        .course-modal-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 24px 24px 0 0;
+        }
+        
+        .course-modal-body {
+            padding: 2rem;
+        }
+        
+        .course-modal-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+        
+        .course-modal-description {
+            color: #4b5563;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            font-size: 1.0625rem;
+        }
+        
+        .course-details-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        @media (min-width: 768px) {
+            .course-details-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        .detail-card {
+            background: #f9fafb;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border-left: 4px solid #1e3a8a;
+        }
+        
+        .detail-card h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #6b7280;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .detail-card p {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin: 0;
+        }
+        
+        /* Empty State (เหมือนเดิม) */
+        .empty-state {
+            text-align: center;
+            padding: 4rem 1rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .empty-state-icon {
+            font-size: 4rem;
+            color: #d1d5db;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Loading Animation (เหมือนเดิม) */
+        .courses-loading {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        
+        @media (min-width: 768px) {
+            .courses-loading {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .courses-loading {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .course-skeleton {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            height: 400px;
+        }
+        
+        .skeleton-image {
+            height: 200px;
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+        
+        .skeleton-content {
+            padding: 1.5rem;
+        }
+        
+        .skeleton-line {
+            height: 1rem;
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+            margin-bottom: 1rem;
+            border-radius: 4px;
+        }
+        
+        .skeleton-line.short {
+            width: 60%;
+        }
+        
+        .skeleton-line.medium {
+            width: 80%;
+        }
+        
+        @keyframes loading {
+            0% {
+                background-position: 200% 0;
+            }
+            100% {
+                background-position: -200% 0;
+            }
+        }
+        
+        /* Mobile Optimizations */
+        @media (max-width: 640px) {
+            .courses-hero {
+                padding: 3rem 1rem;
+            }
+            
+            .page-container {
+                padding-top: 70px;
+            }
+            
+            .filter-section-simple {
+                padding: 1rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .course-card-enhanced {
+                margin-bottom: 1.5rem;
+            }
+            
+            .course-modal-body {
+                padding: 1.5rem;
+            }
+            
+            .course-modal-title {
+                font-size: 1.5rem;
+            }
+            
+            .level-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .filter-actions-simple {
+                flex-direction: column;
+            }
+            
+            .filter-btn-simple {
+                width: 100%;
+            }
+        }
+        
+        /* Scroll to top button (เหมือนเดิม) */
+        .scroll-top-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(30, 58, 138, 0.3);
+            transition: all 0.3s ease;
+            z-index: 100;
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+        }
+        
+        .scroll-top-btn.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: all;
+        }
+        
+        .scroll-top-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(30, 58, 138, 0.4);
+        }
+        
+        /* Search Bar (ปรับให้เข้ากับดีไซน์ใหม่) */
+        .courses-search-simple {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+        
+        .courses-search-simple input {
+            width: 100%;
+            padding: 1rem 1rem 1rem 3rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.2s;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        
+        .courses-search-simple input:focus {
+            outline: none;
+            border-color: #1e3a8a;
+            box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+        }
+        
+        .courses-search-simple i {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #9ca3af;
+        }
+        
+        /* Footer ไม่ fixed (เหมือนเดิม) */
+        .page-footer {
+            position: relative;
+            margin-top: auto;
+        }
+        
+        /* Animations (เหมือนเดิม) */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    

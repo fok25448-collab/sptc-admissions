@@ -1,0 +1,24 @@
+{
+  "name": "sptc-admissions",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "node --env-file-if-exists=.env.local scripts/dev.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "check": "node scripts/check.mjs",
+    "cleanup": "node --env-file-if-exists=.env.local scripts/cleanup.mjs",
+    "test:browser": "playwright test"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "0.3.14",
+    "@fontsource/kanit": "5.3.0",
+    "@fortawesome/fontawesome-free": "6.4.0",
+    "@playwright/test": "1.58.2",
+    "tailwindcss": "3.4.17"
+  }
+}

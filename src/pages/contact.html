@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <!-- ============================================
+    1. HEAD SECTION - ส่วนหัวของหน้าเว็บ
+    ============================================= -->
+    
+    <!-- 1.1: Basic Meta Tags - ข้อมูลพื้นฐานของหน้าเว็บ -->
+    <base target="_top">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ติดต่อเรา - วิทยาลัยเทคนิคสมุทรปราการ</title>
+    
+    <!-- 1.2: External Libraries - การเชื่อมต่อไลบรารีภายนอก -->
+    <!-- Font Awesome สำหรับไอคอน -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts: ฟอนต์ Kanit สำหรับข้อความภาษาไทย -->
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS: Framework สำหรับสไตล์ CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- ============================================
+    2. PAGE-SPECIFIC STYLES - สไตล์เฉพาะหน้านี้
+    ============================================= -->
+    <link rel="stylesheet" href="/assets/contact.css">
+<link rel="stylesheet" href="/assets/migration.css">
+</head>
+
+<body class="bg-gray-50">
+    <!-- ============================================
+    3. NAVIGATION BAR - ส่วนเมนูนำทาง
+    ============================================= -->
+    
+    <!-- 3.1: Main Navigation Bar -->
+    <!-- PARTIAL:nav -->
+
+    <!-- ============================================
+    4. HERO SECTION - ส่วนหัวหลักของหน้า
+    ============================================= -->
+    <section class="contact-hero">
+        <div class="container mx-auto px-4 relative">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight">
+                    ติดต่อเรา
+                </h1>
+                <p class="text-lg sm:text-xl opacity-90 mb-6">
+                    วิทยาลัยเทคนิคสมุทรปราการ
+                </p>
+                <p class="opacity-80 max-w-2xl mx-auto">
+                    เราพร้อมให้คำปรึกษาและตอบคำถามทุกข้อสงสัยเกี่ยวกับการสมัครเรียน
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    5. MAIN CONTENT - เนื้อหาหลักของหน้า
+    ============================================= -->
+    <main class="container mx-auto px-4 py-12">
+        <!-- 5.1: Contact Info Cards - การ์ดข้อมูลติดต่อ -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <!-- 5.1.1: Address Card - การ์ดแสดงที่อยู่ -->
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-3">ที่อยู่</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    วิทยาลัยเทคนิคสมุทรปราการ<br>
+                    ถนนสุขุมวิท ตำบลบางปูใหม่<br>
+                    อำเภอเมือง จังหวัดสมุทรปราการ<br>
+                    รหัสไปรษณีย์ 10280
+                </p>
+                <div class="mt-4">
+                    <a href="https://maps.google.com/?q=วิทยาลัยเทคนิคสมุทรปราการ" 
+                       target="_blank" 
+                       class="text-blue-900 font-medium hover:text-blue-700 inline-flex items-center">
+                        <i class="fas fa-directions mr-2"></i> ดูเส้นทาง
+                    </a>
+                </div>
+            </div>
+            
+            <!-- 5.1.2: Phone Card - การ์ดแสดงเบอร์โทรศัพท์ -->
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-3">โทรศัพท์</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    <strong>งานแนะแนวและรับสมัคร:</strong><br>
+                    02-323-9040<br>
+                    02-323-9041
+                </p>
+                <p class="text-gray-600 leading-relaxed mt-3">
+                    <strong>งานธุรการ:</strong><br>
+                    02-323-9042
+                </p>
+                <div class="mt-4">
+                    <a href="tel:023239040" class="text-blue-900 font-medium hover:text-blue-700 inline-flex items-center">
+                        <i class="fas fa-phone mr-2"></i> โทรด่วน
+                    </a>
+                </div>
+            </div>
+            
+            <!-- 5.1.3: Email Card - การ์ดแสดงอีเมล -->
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-3">อีเมล</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    <strong>งานแนะแนว:</strong><br>
+                    admission@sptc.ac.th
+                </p>
+                <p class="text-gray-600 leading-relaxed mt-3">
+                    <strong>ข้อมูลทั่วไป:</strong><br>
+                    info@sptc.ac.th
+                </p>
+                <div class="mt-4">
+                    <a href="mailto:admission@sptc.ac.th" class="text-blue-900 font-medium hover:text-blue-700 inline-flex items-center">
+                        <i class="fas fa-envelope mr-2"></i> ส่งอีเมล
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5.2: Map Section - ส่วนแสดงแผนที่ -->
+        <div class="mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold text-blue-900 mb-6 text-center">แผนที่วิทยาลัย</h2>
+            <div class="map-container">
+                <!-- Google Maps Embed -->
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3878.125098843886!2d100.64952367502985!3d13.556705986728083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29f25d6b5f9e9%3A0x517bd4d0b69e3db3!2z4Lia4Lij4Li04Lip4Lix4LiXIOC4o-C4tOC4meC4nuC4pSDguJ7guLLguIfguKvguLLguYnguJfguKjguLTguJnguK3guYnguJTguYk!5e0!3m2!1sth!2sth!4v1700000000000!5m2!1sth!2sth" 
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+
+        <!-- 5.3: Contact Form & Office Hours - ฟอร์มติดต่อและเวลาทำการ -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- 5.3.1: Contact Form Section - ส่วนฟอร์มติดต่อ -->
+            <div>
+                <h2 class="text-2xl md:text-3xl font-bold text-blue-900 mb-6">ส่งข้อความถึงเรา</h2>
+                <div class="contact-form">
+                    <form id="contactForm" novalidate>
+                        <div class="form-group">
+                            <label class="form-label" for="name">ชื่อ-นามสกุล</label>
+                            <input type="text" id="name" name="name" class="form-input" placeholder="กรุณากรอกชื่อ-นามสกุล" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="email">อีเมล</label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="example@email.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="phone">เบอร์โทรศัพท์</label>
+                            <input type="tel" id="phone" name="phone" class="form-input" placeholder="กรุณากรอกเบอร์โทรศัพท์">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="subject">เรื่อง</label>
+                            <select id="subject" name="subject" class="form-input" required>
+                                <option value="">-- เลือกเรื่องที่ต้องการติดต่อ --</option>
+                                <option value="admission">สมัครเรียน/รับสมัคร</option>
+                                <option value="course">สอบถามเกี่ยวกับหลักสูตร</option>
+                                <option value="documents">เอกสารการสมัคร</option>
+                                <option value="other">อื่นๆ</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="message">ข้อความ</label>
+                            <textarea id="message" name="message" class="form-textarea" placeholder="กรุณากรอกข้อความที่ต้องการส่ง" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-submit">
+                            <i class="fas fa-paper-plane mr-2"></i> ส่งข้อความ
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- 5.3.2: Office Hours & Social Section - ส่วนเวลาทำการและโซเชียล -->
+            <div>
+                <h2 class="text-2xl md:text-3xl font-bold text-blue-900 mb-6">เวลาทำการ</h2>
+                <div class="office-hours">
+                    <h3 class="text-lg font-bold text-blue-900 mb-4">วิทยาลัยเทคนิคสมุทรปราการ</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center pb-3 border-b border-blue-100">
+                            <span>วันจันทร์ - วันศุกร์</span>
+                            <span class="font-bold text-blue-900">08:30 - 16:30 น.</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-3 border-b border-blue-100">
+                            <span>วันเสาร์</span>
+                            <span class="font-bold text-blue-900">09:00 - 12:00 น.</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span>วันอาทิตย์</span>
+                            <span class="text-gray-500">ปิดทำการ</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 5.3.2.1: Social Media Links - ลิงก์โซเชียลมีเดีย -->
+                    <div class="mt-6">
+                        <h4 class="font-bold text-gray-800 mb-3">ติดตามข่าวสาร</h4>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/SPTC.Thailand" target="_blank" class="social-link">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.youtube.com/@sptc-channel" target="_blank" class="social-link">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="https://line.me/R/ti/p/@sptc" target="_blank" class="social-link">
+                                <i class="fab fa-line"></i>
+                            </a>
+                            <a href="https://www.sptc.ac.th" target="_blank" class="social-link">
+                                <i class="fas fa-globe"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- 5.3.2.2: Notes Section - ส่วนหมายเหตุ -->
+                    <div class="mt-8 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                        <h4 class="font-bold text-yellow-900 mb-2 flex items-center">
+                            <i class="fas fa-info-circle mr-2"></i> หมายเหตุ
+                        </h4>
+                        <p class="text-sm text-yellow-800">
+                            • งดติดต่อในช่วงวันหยุดนักขัตฤกษ์<br>
+                            • ระยะเวลาตอบกลับอีเมล ภายใน 2-3 วันทำการ<br>
+                            • สามารถติดต่อทางโทรศัพท์ได้ทุกวันทำการ
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- 5.3.2.3: Emergency Contact - การติดต่อกรณีฉุกเฉิน -->
+                <div class="mt-8 p-6 bg-red-50 border border-red-200 rounded-lg">
+                    <h3 class="text-lg font-bold text-red-900 mb-3 flex items-center">
+                        <i class="fas fa-exclamation-triangle mr-2"></i> กรณีฉุกเฉิน
+                    </h3>
+                    <p class="text-red-800 mb-3">
+                        สำหรับกรณีฉุกเฉิน สามารถติดต่อได้ที่:
+                    </p>
+                    <div class="space-y-2">
+                        <div class="flex items-center">
+                            <i class="fas fa-phone text-red-600 mr-3"></i>
+                            <div>
+                                <div class="font-medium">กองรักษาความปลอดภัย</div>
+                                <div class="text-red-900 font-bold">02-323-9049</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ============================================
+    6. FOOTER - ส่วนท้ายของหน้า
+    ============================================= -->
+    <!-- PARTIAL:footer -->
+
+    <!-- ============================================
+    7. BACK TO TOP BUTTON - ปุ่มกลับขึ้นด้านบน
+    ============================================= -->
+    <button id="backToTop" 
+            class="fixed bottom-8 right-8 bg-blue-900 text-white p-3 rounded-full shadow-lg hover:bg-blue-800 transition transform hover:scale-110 z-40 hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ============================================
+    8. JAVASCRIPT FUNCTIONS - ฟังก์ชัน JavaScript
+    ============================================= -->
+    
+<script src="/assets/common.js"></script>
+<script src="/assets/contact.js"></script>
+</body>
+</html>

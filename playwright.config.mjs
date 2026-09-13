@@ -1,0 +1,2 @@
+import {defineConfig} from '@playwright/test';
+export default defineConfig({testDir:'tests/browser',timeout:30000,workers:1,use:{baseURL:'http://localhost:3000',headless:true,launchOptions:process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH,args:['--no-sandbox','--disable-dev-shm-usage']}:{}},webServer:{command:'npm run dev',url:'http://localhost:3000',reuseExistingServer:true},reporter:'list'});

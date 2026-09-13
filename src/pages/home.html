@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <!-- ส่วน 1: Meta และพื้นฐานของหน้า -->
+    <base target="_top">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>งานแนะแนว - วิทยาลัยเทคนิคสมุทรปราการ</title>
+    
+    <!-- 1.1: Include Styles จากไฟล์ภายนอก -->
+    <!-- PARTIAL:global-head -->
+<link rel="stylesheet" href="/assets/migration.css">
+</head>
+
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+    <!-- ==============================================
+    ส่วน 2: Navigation Bar (เมนูหลัก)
+    ============================================== -->
+    <!-- 2.1: Navigation Bar Fixed Top -->
+    <!-- PARTIAL:nav -->
+
+    <!-- ==============================================
+    ส่วน 3: เนื้อหาหลักของหน้า (เริ่มหลังจากเมนู)
+    ============================================== -->
+    <!-- 3.1: Padding เพื่อหลีกเลี่ยงการทับเมนู -->
+    <div class="pt-20">
+        
+        <!-- ==============================================
+        ส่วน 3.2: Hero Section (ส่วนแนะนำหลัก)
+        ============================================== -->
+        <header id="home" class="hero-bg h-screen flex items-center justify-center text-center px-4 md:px-6">
+            <div class="text-white max-w-4xl animate-fade-in-up">
+                <!-- แบนเนอร์เปิดรับสมัคร -->
+                <span class="bg-yellow-400 text-blue-900 px-4 py-1 rounded-full text-sm font-bold mb-4 inline-block shadow-lg">
+                    เปิดรับสมัครนักศึกษาใหม่ 2567
+                </span>
+                
+                <!-- หัวข้อหลัก -->
+                <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight drop-shadow-md">
+                    สร้างอนาคตมืออาชีพ<br>
+                    <span class="text-yellow-400">ที่เทคนิคสมุทรปราการ</span>
+                </h1>
+                
+                <!-- คำอธิบายย่อย -->
+                <p class="text-base md:text-lg lg:text-xl mb-8 md:mb-10 font-light text-gray-100 max-w-2xl mx-auto px-4">
+                    แหล่งเรียนรู้ด้านวิชาชีพที่ทันสมัย มุ่งเน้นทักษะปฏิบัติจริง พร้อมก้าวสู่ตลาดแรงงานระดับสากล
+                </p>
+                
+                <!-- ปุ่ม Call-to-Action -->
+                <div class="flex flex-col md:flex-row justify-center gap-4 px-4">
+                    <a href="/courses" 
+                       class="bg-yellow-400 text-blue-900 font-bold px-6 md:px-8 py-3 md:py-4 rounded-lg hover:bg-yellow-300 transition text-base md:text-lg shadow-lg hover:shadow-yellow-400/50 transform hover:-translate-y-1 text-center">
+                        ดูหลักสูตรที่เปิดสอน
+                    </a>
+                    <a href="/application" 
+                       class="border-2 border-white text-white font-bold px-6 md:px-8 py-3 md:py-4 rounded-lg hover:bg-white hover:text-blue-900 transition text-base md:text-lg text-center backdrop-blur-sm">
+                        สมัครเรียนออนไลน์
+                    </a>
+                </div>
+                
+                <!-- ข้อความเสริม -->
+                <p class="text-sm text-gray-200 mt-6">
+                    <i class="fas fa-clock mr-1"></i> ใช้เวลาเพียง 5 นาที
+                </p>
+            </div>
+        </header>
+
+        <!-- ==============================================
+        ส่วน 3.3: Statistics Section (สถิติสำคัญ)
+        ============================================== -->
+        <section class="py-8 md:py-12 bg-white -mt-8 md:-mt-10 relative z-10 container mx-auto px-4 md:px-6 rounded-xl shadow-xl max-w-6xl border-b-4 border-yellow-400">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 text-center">
+                <!-- สถิติที่ 1: อัตราการมีงานทำ -->
+                <div class="p-4">
+                    <i class="fas fa-user-graduate text-3xl md:text-4xl text-blue-900 mb-4"></i>
+                    <h3 class="text-3xl md:text-4xl font-bold text-gray-800">95%</h3>
+                    <p class="text-gray-500 mt-2 text-sm md:text-base">ผู้สำเร็จการศึกษามีงานทำ</p>
+                </div>
+                
+                <!-- สถิติที่ 2: จำนวนบุคลากร -->
+                <div class="p-4">
+                    <i class="fas fa-chalkboard-teacher text-3xl md:text-4xl text-blue-900 mb-4"></i>
+                    <h3 class="text-3xl md:text-4xl font-bold text-gray-800">100+</h3>
+                    <p class="text-gray-500 mt-2 text-sm md:text-base">บุคลากรผู้เชี่ยวชาญ</p>
+                </div>
+                
+                <!-- สถิติที่ 3: ความร่วมมือกับภาคเอกชน -->
+                <div class="p-4">
+                    <i class="fas fa-handshake text-3xl md:text-4xl text-blue-900 mb-4"></i>
+                    <h3 class="text-3xl md:text-4xl font-bold text-gray-800">50+</h3>
+                    <p class="text-gray-500 mt-2 text-sm md:text-base">ความร่วมมือกับภาคเอกชน</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==============================================
+        ส่วน 3.4: Courses Section (แสดงรายการหลักสูตร)
+        ============================================== -->
+        <section id="courses" class="py-12 md:py-20 bg-gray-50">
+            <div class="container mx-auto px-4 md:px-6">
+                <!-- หัวข้อหลักของส่วน -->
+                <div class="text-center mb-8 md:mb-12">
+                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-blue-900 mb-4">หลักสูตรที่เปิดสอน</h2>
+                    <div class="w-20 md:w-24 h-1.5 bg-yellow-400 mx-auto rounded-full"></div>
+                    <p class="text-gray-600 mt-4 text-base md:text-lg">เลือกเรียนในสายงานที่คุณรัก สู่อาชีพที่คุณใฝ่ฝัน</p>
+                    <p id="resultCount" class="text-sm text-blue-600 mt-2 font-medium"></p>
+                </div>
+
+                <!-- Loader สำหรับแสดงระหว่างโหลดข้อมูล -->
+                <div id="loader" class="text-center py-8">
+                    <div class="loader"></div>
+                    <p class="text-gray-500 mt-2">กำลังโหลดข้อมูลหลักสูตร...</p>
+                </div>
+
+                <!-- Container สำหรับการ์ดหลักสูตร (จะถูกเติมด้วย JavaScript) -->
+                <div id="cardContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                    <!-- Cards will be loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ==============================================
+        ส่วน 3.5: Admission Process Section (ขั้นตอนการสมัคร)
+        ============================================== -->
+        <section id="admission" class="py-12 md:py-20 bg-blue-900 text-white relative overflow-hidden">
+            <!-- Background Decoration -->
+            <div class="absolute top-0 left-0 w-full h-full opacity-5 md:opacity-10">
+                <i class="fas fa-cog absolute -top-10 -left-10 text-[200px] md:text-[300px] animate-spin-slow"></i>
+            </div>
+            
+            <div class="container mx-auto px-4 md:px-6 relative z-10">
+                <!-- หัวข้อส่วน -->
+                <div class="text-center mb-12 md:mb-16">
+                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">ขั้นตอนการสมัครเรียน</h2>
+                    <p class="text-blue-200 text-base md:text-lg">ง่าย สะดวก รวดเร็ว ด้วยระบบออนไลน์</p>
+                </div>
+                
+                <!-- ขั้นตอนการสมัคร 3 ขั้นตอน -->
+                <div class="flex flex-col md:flex-row justify-center items-center space-y-8 md:space-y-0 md:space-x-6 lg:space-x-8">
+                    <!-- ขั้นตอนที่ 1: กรอกใบสมัคร -->
+                    <div class="bg-blue-800/50 p-6 md:p-8 rounded-xl md:rounded-2xl border border-blue-700 backdrop-blur-sm text-center w-full md:w-1/3 hover:bg-blue-800 transition duration-300">
+                        <div class="w-14 h-14 md:w-16 md:h-16 bg-yellow-400 rounded-full flex items-center justify-center text-blue-900 text-xl md:text-2xl font-bold mx-auto mb-4 md:mb-6 shadow-lg shadow-yellow-400/20">1</div>
+                        <h4 class="text-lg md:text-xl font-bold mb-2">กรอกใบสมัคร</h4>
+                        <p class="text-blue-200 text-sm md:text-base">ผ่านเว็บไซต์รับสมัครออนไลน์ พร้อมระบุสาขาวิชาที่ต้องการ</p>
+                    </div>
+                    
+                    <!-- ลูกศรสำหรับ Desktop -->
+                    <div class="hidden md:block text-blue-400 text-xl lg:text-2xl">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    
+                    <!-- ขั้นตอนที่ 2: ยื่นเอกสาร -->
+                    <div class="bg-blue-800/50 p-6 md:p-8 rounded-xl md:rounded-2xl border border-blue-700 backdrop-blur-sm text-center w-full md:w-1/3 hover:bg-blue-800 transition duration-300">
+                        <div class="w-14 h-14 md:w-16 md:h-16 bg-white rounded-full flex items-center justify-center text-blue-900 text-xl md:text-2xl font-bold mx-auto mb-4 md:mb-6 shadow-lg">2</div>
+                        <h4 class="text-lg md:text-xl font-bold mb-2">ยื่นเอกสาร</h4>
+                        <p class="text-blue-200 text-sm md:text-base">อัปโหลดเอกสารวุฒิการศึกษาและหลักฐานทางราชการ</p>
+                    </div>
+                    
+                    <!-- ลูกศรสำหรับ Desktop -->
+                    <div class="hidden md:block text-blue-400 text-xl lg:text-2xl">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    
+                    <!-- ขั้นตอนที่ 3: สอบสัมภาษณ์ -->
+                    <div class="bg-blue-800/50 p-6 md:p-8 rounded-xl md:rounded-2xl border border-blue-700 backdrop-blur-sm text-center w-full md:w-1/3 hover:bg-blue-800 transition duration-300">
+                        <div class="w-14 h-14 md:w-16 md:h-16 bg-white rounded-full flex items-center justify-center text-blue-900 text-xl md:text-2xl font-bold mx-auto mb-4 md:mb-6 shadow-lg">3</div>
+                        <h4 class="text-lg md:text-xl font-bold mb-2">สอบสัมภาษณ์</h4>
+                        <p class="text-blue-200 text-sm md:text-base">เข้าสอบสัมภาษณ์ตามวันและเวลาที่วิทยาลัยกำหนด</p>
+                    </div>
+                </div>
+                
+                <!-- Call-to-Action Button สำหรับสมัครเรียน -->
+                <div class="text-center mt-12 pt-8 border-t border-blue-700">
+                    <a href="/application" 
+                       class="inline-flex items-center bg-yellow-400 text-blue-900 font-bold px-6 md:px-8 py-3 md:py-4 rounded-lg hover:bg-yellow-300 transition text-base md:text-lg shadow-lg hover:shadow-yellow-400/30 transform hover:-translate-y-1">
+                        <i class="fas fa-paper-plane mr-2 md:mr-3"></i> สมัครเรียนตอนนี้
+                    </a>
+                    <p class="text-blue-200 mt-4 text-sm">
+                        <i class="fas fa-clock mr-1"></i> ใช้เวลาประมาณ 5-10 นาที
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    <!-- ==============================================
+    ส่วน 4: Footer (ส่วนท้ายเว็บไซต์)
+    ============================================== -->
+    <!-- PARTIAL:footer -->
+
+        <!-- ==============================================
+        ส่วน 5: ปุ่ม Back to Top
+        ============================================== -->
+        <button id="backToTop" 
+                onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+                class="fixed bottom-6 right-6 bg-blue-900 text-white p-3 rounded-full shadow-lg hover:bg-blue-800 transition transform hover:scale-110 z-40 hidden">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+
+        <!-- ==============================================
+        ส่วน 6: Include JavaScript ไฟล์
+        ============================================== -->
+        
+        
+        <!-- ==============================================
+        ส่วน 7: JavaScript สำหรับหน้า index.html
+        ============================================== -->
+        
+    </div>
+<script src="/assets/common.js"></script>
+<script src="/assets/home.js"></script>
+</body>
+</html>
