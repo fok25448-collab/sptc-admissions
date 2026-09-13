@@ -15,7 +15,7 @@ await cp('node_modules/@fortawesome/fontawesome-free/webfonts','dist/webfonts',{
 await mkdir('dist/licenses',{recursive:true});
 await cp('node_modules/@fontsource/kanit/LICENSE','dist/licenses/Kanit.txt');
 await cp('node_modules/@fortawesome/fontawesome-free/LICENSE.txt','dist/licenses/Font-Awesome.txt');
-for(const page of ['home','courses','application','contact']) {
+for(const page of ['home','courses','application','contact','application-status','admin']) {
  let html=await read(`src/pages/${page}.html`);
  for(const name of ['nav','footer','global-head']) {
   const partial=name==='footer'&&page==='contact'?'footer-compact':name;
@@ -30,4 +30,9 @@ for(const page of ['home','courses','application','contact']) {
  await writeFile(`dist/${page==='home'?'index':page}.html`,html);
 }
 execFileSync(process.execPath,['node_modules/tailwindcss/lib/cli.js','-c','tailwind.config.cjs','-i','src/styles/tailwind-input.css','-o','dist/assets/tailwind.css','--minify'],{stdio:'inherit'});
-console.log('Built 4 original pages with shared navigation/footer.');
+await cp('shared/application-model.js','dist/assets/application-model.js');
+await cp('node_modules/pdfmake/build/pdfmake.min.js','dist/assets/pdfmake.min.js');
+const vfs={};for(const weight of [400,700])vfs['Sarabun-'+weight+'.ttf']=(await readFile('public/assets/pdf-fonts/Sarabun-'+weight+'.ttf')).toString('base64');
+await writeFile('dist/assets/pdf-fonts.js','window.pdfMake.addVirtualFileSystem('+JSON.stringify(vfs)+');');
+await cp('node_modules/pdfmake/LICENSE','dist/licenses/pdfmake.txt');
+console.log('Built 6 pages with shared navigation/footer and local Thai PDF fonts.');

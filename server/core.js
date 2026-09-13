@@ -24,12 +24,12 @@ export async function rest(path,options={}) {
 export const rpc=(name,body)=>rest('rpc/'+name,{method:'POST',body});
 export function signed(payload){const b=Buffer.from(JSON.stringify(payload)).toString('base64url');return b+'.'+createHmac('sha256',config().secret).update(b).digest('base64url');}
 export function verify(token){
- if(typeof token!=='string'||token.length>6000) fail(400,'ข้อมูลการอัปโหลดไม่ถูกต้อง');
+ if(typeof token!=='string'||token.length>16000) fail(400,'ข้อมูลการอัปโหลดไม่ถูกต้อง');
  const [b,s,...extra]=token.split('.');
  const expected=createHmac('sha256',config().secret).update(b||'').digest('base64url');
  if(extra.length||!s||s.length!==expected.length||!timingSafeEqual(Buffer.from(s),Buffer.from(expected))) fail(400,'ข้อมูลการอัปโหลดไม่ถูกต้อง');
  let data;try{data=JSON.parse(Buffer.from(b,'base64url'));}catch{fail(400,'ข้อมูลการอัปโหลดไม่ถูกต้อง');}
- if(data.exp<Date.now()) fail(410,'คำขอหมดอายุ กรุณาเลือกไฟล์และส่งใหม่');return data;
+ if(!Number.isFinite(data.exp)||data.exp<Date.now()) fail(410,'คำขอหมดอายุ กรุณาเลือกไฟล์และส่งใหม่');return data;
 }
 export async function rate(req,scope,limit){
  const ip=req.headers['x-forwarded-for']||req.socket?.remoteAddress||'unknown';

@@ -2,7 +2,7 @@ import {createServer} from 'node:http';
 import {readFile} from 'node:fs/promises';
 import {resolve,extname} from 'node:path';
 import './build.mjs';
-const handlers={};for(const name of ['courses','application-prepare','applications','contact'])handlers['/api/'+name]=(await import('../api/'+name+'.js')).default;
+const handlers={};for(const name of ['courses','application-prepare','applications','contact','application-status','admin-session','admin'])handlers['/api/'+name]=(await import('../api/'+name+'.js')).default;
 const types={'.html':'text/html; charset=utf-8','.js':'application/javascript; charset=utf-8','.css':'text/css; charset=utf-8'};
 createServer(async(req,res)=>{
  try{
@@ -11,7 +11,7 @@ createServer(async(req,res)=>{
    let text='';for await(const chunk of req){text+=chunk;if(Buffer.byteLength(text)>40000){res.writeHead(413);res.end();return;}}
    req.body=text;await handlers[url.pathname](req,res);return;
   }
-  const pages={'/':'index.html','/courses':'courses.html','/application':'application.html','/contact':'contact.html'};
+  const pages={'/':'index.html','/courses':'courses.html','/application':'application.html','/contact':'contact.html','/application-status':'application-status.html','/admin':'admin.html'};
   const path=resolve('dist',pages[url.pathname]||'.'+url.pathname);
   if(!path.startsWith(resolve('dist')+'/')){res.writeHead(403);res.end();return;}
   const bytes=await readFile(path);res.setHeader('Content-Type',types[extname(path)]||'application/octet-stream');res.end(bytes);

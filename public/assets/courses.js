@@ -309,7 +309,7 @@
             document.getElementById('modalCourseDuration').textContent=course.duration||'สอบถามเจ้าหน้าที่';
             document.getElementById('modalCourseTuition').textContent=course.tuition||'สอบถามเจ้าหน้าที่';
             document.getElementById('modalCourseJobs').textContent=course.jobs||'สอบถามเจ้าหน้าที่';
-            modal.querySelector('a[href^="/application"]').href='/application?course='+encodeURIComponent(course.id);
+            const applyLink=modal.querySelector('a[href^="/application"],a[data-admission-link]');applyLink.dataset.admissionLink='true';applyLink.href=course.level==='ปริญญาตรี'?'/contact':'/application?course='+encodeURIComponent(course.id);applyLink.textContent=course.level==='ปริญญาตรี'?'ติดต่อสอบถามการสมัคร':'สมัครเรียนหลักสูตรนี้';
             // Update badges
             const levelClass = course.level.includes('ปวส') ? 'pvs' : 'pvch';
             const levelText = course.level.includes('ปวส') ? 'ปวส.' : (course.level.includes('ปริญญา') ? 'ปริญญาตรี' : 'ปวช.');

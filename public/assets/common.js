@@ -1,7 +1,7 @@
 /* Shared transport/helpers. No database secrets or direct table permissions in the browser. */
 window.App={
  async api(path,data){
-  const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),55000);
+  const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),115000);
   try{
    const response=await fetch('/api/'+path,{method:data===undefined?'GET':'POST',headers:data===undefined?{}:{'Content-Type':'application/json'},body:data===undefined?undefined:JSON.stringify(data),signal:controller.signal});
    const result=await response.json().catch(()=>({error:'การเชื่อมต่อขัดข้อง กรุณาลองใหม่'}));
