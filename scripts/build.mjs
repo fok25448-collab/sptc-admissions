@@ -24,6 +24,8 @@ for(const page of ['home','courses','application','contact']) {
  html=html.replace(/<script src="https:\/\/cdn\.tailwindcss\.com[^"]*"><\/script>/g,'<link rel="stylesheet" href="/assets/tailwind.css">');
  html=html.replace(/https:\/\/cdnjs\.cloudflare\.com\/ajax\/libs\/font-awesome\/6\.4\.0\/css\/all\.min\.css/g,'/assets/fontawesome.css');
  html=html.replace(/https:\/\/fonts\.googleapis\.com\/css2\?[^"]+/g,'/assets/fonts/kanit.css');
+ html=html.replace('</head>','<link rel="stylesheet" href="/assets/motion.css">\n</head>');
+ html=html.replace('</body>','<script src="/assets/motion.js"></script>\n</body>');
  html=html.replace('<body' ,'<body data-page="'+page+'"');
  await writeFile(`dist/${page==='home'?'index':page}.html`,html);
 }

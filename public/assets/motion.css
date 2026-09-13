@@ -1,0 +1,60 @@
+/* Progressive enhancement: content remains visible without JavaScript or animation. */
+@media (prefers-reduced-motion: no-preference) {
+  .motion-enabled .hero-bg,
+  .motion-enabled .courses-hero,
+  .motion-enabled .contact-hero { position:relative; isolation:isolate; overflow:hidden; }
+
+  .motion-enabled .hero-bg::after,
+  .motion-enabled .courses-hero::after,
+  .motion-enabled .contact-hero::after {
+    content:""; position:absolute; inset:-12%; z-index:-1; pointer-events:none;
+    background:radial-gradient(ellipse at 20% 35%,rgba(147,197,253,.16),transparent 48%),
+               radial-gradient(ellipse at 80% 75%,rgba(251,191,36,.12),transparent 42%);
+    animation:sptc-ambient 12s ease-in-out 2 alternate;
+    animation-play-state:paused;
+  }
+  .motion-enabled .motion-in-view::after { animation-play-state:running; }
+  .motion-paused .motion-in-view::after { animation-play-state:paused; }
+  @keyframes sptc-ambient {
+    from { transform:translate3d(-1.5%,0,0) scale(1); }
+    to { transform:translate3d(1.5%,2%,0) scale(1.04); }
+  }
+
+  .motion-enabled nav a,
+  .motion-enabled button,
+  .motion-enabled a[role="button"] {
+    transition-property:color,background-color,border-color,box-shadow,transform,opacity;
+    transition-duration:180ms;
+    transition-timing-function:ease-out;
+  }
+  .motion-enabled button:not(:disabled):active,
+  .motion-enabled a[role="button"]:active { transform:scale(.97); }
+
+  .motion-enabled .course-modal-content { animation:sptc-dialog-in 320ms cubic-bezier(.22,1,.36,1); }
+  @keyframes sptc-dialog-in {
+    from { opacity:0; transform:translate3d(0,14px,0) scale(.985); }
+    to { opacity:1; transform:translate3d(0,0,0) scale(1); }
+  }
+}
+@media (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference) {
+  .motion-enabled nav a:hover { transform:translateY(-2px); }
+  .motion-enabled .hover-card:hover,
+  .motion-enabled .course-card-enhanced:hover,
+  .motion-enabled .contact-card:hover {
+    transform:translateY(-5px);
+    box-shadow:0 16px 32px -16px rgba(30,58,138,.35);
+  }
+}
+/* Also disable the legacy page animations for users who request reduced motion. */
+@media (prefers-reduced-motion:reduce) {
+  *,*::before,*::after {
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+    scroll-behavior:auto!important;
+  }
+}
+@media print {
+  *,*::before,*::after { animation:none!important; transition:none!important; }
+  .hero-bg::after,.courses-hero::after,.contact-hero::after { display:none!important; }
+}
